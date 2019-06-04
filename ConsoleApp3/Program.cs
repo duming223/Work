@@ -54,10 +54,6 @@ namespace ConsoleApp3
             pbm.Tite = $"这是一条来自{sgt.Author}的求助： ";
             pbm.Body = "求助内容..............";
 
-            Student xr = new Student();
-            var canwork = xr.CanWork;
-            Console.WriteLine(canwork );
-           xr
             //ate.Publish();      //发布一篇文章
             // cmt.Publish();  //发一条评论
             //sgt.Publish();   //提一个建议
@@ -160,11 +156,11 @@ namespace ConsoleApp3
     }
     class Student
     {
-      public readonly int age=12;
+        public readonly int age = 12;
         readonly int abc;
-       public  bool CanWork
+        public bool CanWork
         {
-            
+
             get
             {
                 if (age >= 16)
@@ -179,6 +175,43 @@ namespace ConsoleApp3
             }
         }
     }
+
+    class Window
+    {
+        static void window()
+        {
+            IAnimal<Tiger> taiger = new Felid<Tiger>();
+
+            IAnimal<Zoo> zoo = new Felid<Zoo>();
+            //zoo = taiger;
+        }
+    }
+
+    interface IAnimal<in  T>
+    {
+        
+    }
+
+    class Felid<T> :IAnimal<T>
+    {
+        public void Getfalid ()
+        {
+
+        }
+    }
+    class Zoo 
+    {
+
+    }
+    class Tiger : Zoo
+    {
+
+    }
+    class Lion : Zoo
+    {
+
+    }
+
 }
 
 
